@@ -9,6 +9,10 @@ const app = express()
 
 app.use(bodyParser.urlencoded({extended : false}))
 
+// static files are files which can be served to the users !
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 app.use('/admin', adminRoutes)
 app.use(shopRoutes)
