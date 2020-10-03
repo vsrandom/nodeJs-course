@@ -1,24 +1,24 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const adminRoutes = require('./routes/admin')
-const shopRoutes = require('./routes/shop')
-const path = require('path')
-const errorController = require('./controllers/404')
+const path = require('path');
 
-const app = express()
+const express = require('express');
+const bodyParser = require('body-parser');
 
-app.set('view engine','ejs')
-app.set('views','views')
+const errorController = require('./controllers/error');
 
-app.use(bodyParser.urlencoded({extended : false}))
+const app = express();
 
-// static files are files which can be served to the users !
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/admin', adminRoutes);
+app.use(shopRoutes);
 
-app.use('/admin', adminRoutes)
-app.use(shopRoutes)
+app.use(errorController.get404);
 
-app.use(errorController.get404)
-
-app.listen(3000)
+app.listen(3000);
