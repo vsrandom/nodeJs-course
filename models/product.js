@@ -23,6 +23,7 @@ module.exports = class Product {
     this.imageUrl = imageUrl;
     this.description = description;
     this.price = price;
+    this.id = Math.random() + ""
   }
 
   save() {
@@ -36,5 +37,12 @@ module.exports = class Product {
 
   static fetchAll(cb) {
     getProductsFromFile(cb);
+  }
+
+  static getById(id,cb){
+    getProductsFromFile(products=>{
+      const product = products.find(el=>el.id == id)
+      cb(product)
+    })
   }
 };

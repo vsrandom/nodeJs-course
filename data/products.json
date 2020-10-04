@@ -1,1 +1,1 @@
-[{"id": "12345","title":"Book 1","imageUrl":"https://www.adazing.com/wp-content/uploads/2019/02/open-book-clipart-03.png","description":"This is an awsome book !","price":"19.65"}]
+[{"title":"Book 1","imageUrl":"https://www.adazing.com/wp-content/uploads/2019/02/open-book-clipart-03.png","description":"This is book 1","price":"10","id":"0.1679447034509649"},{"title":"Book 2","imageUrl":"https://www.adazing.com/wp-content/uploads/2019/02/open-book-clipart-03.png","description":"This is book 2","price":"12","id":"0.345713949895057"}]
