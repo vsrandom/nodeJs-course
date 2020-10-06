@@ -9,14 +9,6 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
-.centered{
-  text-align : center;
-}
-
-.centered img{
-  height : 150px;
-  width: 150px;
-}
 
 main {
   padding: 1rem;
@@ -25,6 +17,10 @@ main {
 
 form {
   display: inline;
+}
+
+.centered {
+  text-align: center;
 }
 
 .main-header {
